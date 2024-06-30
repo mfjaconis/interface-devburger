@@ -1,6 +1,6 @@
-import styled from "styled-components";
-import BackgroundLogin from "../../assets/bg-login.svg";
-import BackgroundHamburger from "../../assets/bg-login-hamburger.svg";
+import styled from 'styled-components';
+import BackgroundLogin from '../../assets/bg-login.svg';
+import BackgroundHamburger from '../../assets/bg-login-hamburger.svg';
 
 export const Container = styled.div`
   display: flex;
@@ -8,7 +8,7 @@ export const Container = styled.div`
   width: 100vw;
 `;
 export const LeftContainer = styled.div`
-  background-image: url("${BackgroundLogin}");
+  background-image: url('${BackgroundLogin}');
   background-size: cover;
 
   width: 100%;
@@ -31,7 +31,7 @@ export const RightContainer = styled.div`
   width: 100%;
   height: 100%;
   max-width: 50%;
-  background-image: url("${BackgroundHamburger}");
+  background-image: url('${BackgroundHamburger}');
   background-color: #1e1e1e;
   background-size: cover;
 
@@ -48,14 +48,14 @@ export const RightContainer = styled.div`
 `;
 
 export const Title = styled.h2`
-  font-family: "Road Rage", sans-serif;
+  font-family: 'Road Rage', sans-serif;
   font-weight: 400;
-  font-size: 39px;
+  font-size: 38px;
   color: #fff;
 
   span {
     color: #9758a6;
-    font-family: "Road Rage", sans-serif;
+    font-family: 'Road Rage', sans-serif;
   }
 `;
 
