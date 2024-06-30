@@ -50,7 +50,7 @@ export const RightContainer = styled.div`
 export const Title = styled.h2`
   font-family: 'Road Rage', sans-serif;
   font-weight: 400;
-  font-size: 38px;
+  font-size: 39px;
   color: #fff;
 
   span {
