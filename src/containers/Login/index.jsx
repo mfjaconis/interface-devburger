@@ -23,26 +23,30 @@ export function Login() {
     });
 
     const onSubmit = async (data) => {
-        const response = await toast.promise(
-            api.post('/sessions ', {
-                email: data.email,
-                password: data.password
-            }),
-            {
-                pending: 'Verificando seus dados',
-                success: {
-                    render() {
-                        setTimeout(() => {
-                            navigate('/teste')
-                        }, 2000)
-                        return 'Seja bem vindo(a)'
-                    }
-                },
-                error: 'Email ou Senha Incorreta'
-            }
-        )
+        try {
+            const response = await toast.promise(
+                api.post('/sessions ', {
+                    email: data.email,
+                    password: data.password
+                }),
+                {
+                    pending: 'Verificando seus dados',
+                    success: {
+                        render() {
+                            setTimeout(() => {
+                                navigate('/teste')
+                            }, 2000)
+                            return 'Seja bem vindo(a)'
+                        }
+                    },
+                }
+            )
+            console.log(response)
+        } catch (error) {
+            toast.error('Email ou Senha Incorreta')
+        }
 
-        console.log(response)
+
     };
 
 
