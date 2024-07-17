@@ -2,6 +2,7 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from "yup";
 import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 
 
 import Logo from '../../assets/logo-login.svg'
@@ -10,6 +11,8 @@ import { Container, LeftContainer, RightContainer, Title, Form, InputContainer, 
 import { api } from "../../services/api";
 
 export function Login() {
+    const navigate = useNavigate()
+
     const schema = yup.object({
         email: yup.string().email('Digite um e-mail válido').required('O e-mail é obrigatório'),
         password: yup.string().min(6, 'A senha deve conter pelo menos 6 caracteres').required('Digite uma senha')
@@ -27,7 +30,14 @@ export function Login() {
             }),
             {
                 pending: 'Verificando seus dados',
-                success: 'Seja bem vindo(a)',
+                success: {
+                    render() {
+                        setTimeout(() => {
+                            navigate('/teste')
+                        }, 2000)
+                        return 'Seja bem vindo(a)'
+                    }
+                },
                 error: 'Email ou Senha Incorreta'
             }
         )
