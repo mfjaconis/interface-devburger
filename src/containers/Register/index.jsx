@@ -6,7 +6,7 @@ import { toast } from "react-toastify";
 
 import Logo from '../../assets/logo-login.svg'
 import { Button } from '../../components/Button'
-import { Container, LeftContainer, RightContainer, Title, Form, InputContainer } from './styles'
+import { Container, LeftContainer, RightContainer, Title, Form, InputContainer, Link } from './styles'
 import { api } from "../../services/api";
 
 export function Register() {
@@ -79,7 +79,7 @@ export function Register() {
                         </InputContainer>
                         <Button type="submit">Entrar</Button>
                     </Form>
-                    <p>Já possui conta? <a>Clique aqui.</a></p>
+                    <p>Já possui conta? <Link to="/">Clique aqui.</Link></p>
                 </RightContainer>
             </Container>
         </>
