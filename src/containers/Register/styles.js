@@ -1,0 +1,86 @@
+import styled from "styled-components";
+import BackgroundImage from "../../assets/bg.svg";
+
+export const Container = styled.div`
+ height: 100vh;
+ width: 100vw;
+ background-image: url('${BackgroundImage}');
+ display: flex;
+ justify-content: center;
+ align-items: center;
+`;
+
+export const ContainerItens = styled.div`
+    height: 80%;
+    padding: 25px 75px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #373737;
+    border-radius: 0 10px 10px 0;
+
+    h2 {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 28px;
+        color: #fff;
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    img {
+        height: 100px;
+    }
+`;
+
+export const RegisterImage = styled.img`
+    height: 80%;
+`;
+
+export const Label = styled.p`
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 14px;
+    color: #fff;
+    margin-top: ${(props) => (props.error ? "12px" : "25px")};
+    margin-bottom: 5px;
+`;
+
+export const Input = styled.input`
+    width: 391px;
+    height: 38px;
+    background-color: #fff;
+    box-shadow: 3px 3px 10px rgba(74, 144, 226, 0.19);
+    border-radius: 5px;
+    border: ${(props) => (props.error ? "2px solid #cc1717" : "none")};
+    padding-left: 10px;
+`;
+
+export const SignInLink = styled.p`
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: 300;
+    font-style: normal;
+    color: #fff;
+
+    a {
+        cursor: pointer;
+        text-decoration: underline;
+    }
+`;
+
+export const ErrorMessage = styled.p`
+    margin-top: 5px;
+    font-weight: bold;
+    font-style: normal;
+    font-size: 14px;
+    line-height: 16px;
+    color: #cc1717;
+`;
