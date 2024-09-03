@@ -59,30 +59,6 @@ export const Input = styled.input`
     padding-left: 10px;
 `;
 
-export const Button = styled.button`
-    width: 182px;
-    height: 36px;
-    color: #fff;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 19px;
-    text-align: center;
-    background-color: #9758a6;
-    border-radius: 20px;
-    border: none;
-    margin-top: 75px;
-    margin-bottom: 25px;
-    cursor: pointer;
-
-    &:hover{
-        opacity: 0.8;
-    }
-
-    &:active{
-        opacity: 0.6;
-    }
-`;
-
 export const SignInLink = styled.p`
     font-size: 14px;
     line-height: 16px;
