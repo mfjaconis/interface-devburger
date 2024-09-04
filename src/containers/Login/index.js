@@ -7,6 +7,7 @@ import * as Yup from "yup";
 import LoginImg from "../../assets/login-image.svg";
 import Logo from "../../assets/logo.svg";
 import Button from "../../components/Button";
+import { useUser } from "../../hooks/UserContext";
 import api from "../../services/api";
 import {
 	Container,
@@ -19,6 +20,8 @@ import {
 } from "./styles";
 
 function Login() {
+	const { putUserData, userData } = useUser();
+
 	const schema = Yup.object({
 		email: Yup.string()
 			.email("Digite um e-mail válido")
@@ -37,17 +40,24 @@ function Login() {
 	});
 
 	const onSubmit = async (clientData) => {
-		const response = await toast.promise(
-			api.post("sessions", {
-				email: clientData.email,
-				password: clientData.password,
-			}),
+		const { data } = await toast.promise(
+			api.post(
+				"sessions",
+				{
+					email: clientData.email,
+					password: clientData.password,
+				},
+				{ validateStatus: () => true },
+			),
 			{
 				pending: "Verificando os dados informados",
 				success: "Seja bem-vindo(a)",
 				error: "Verifique seu e-mail e senha",
 			},
 		);
+
+		putUserData(data);
+		console.log(userData);
 	};
 
 	return (
