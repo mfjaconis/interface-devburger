@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
 import * as Yup from "yup";
 
+import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import LoginImg from "../../assets/login-image.svg";
 import Logo from "../../assets/logo.svg";
 import Button from "../../components/Button";
@@ -20,7 +21,7 @@ import {
 } from "./styles";
 
 function Login() {
-	const { putUserData, userData } = useUser();
+	const { putUserData } = useUser();
 
 	const schema = Yup.object({
 		email: Yup.string()
@@ -57,7 +58,6 @@ function Login() {
 		);
 
 		putUserData(data);
-		console.log(userData);
 	};
 
 	return (
@@ -93,7 +93,9 @@ function Login() {
 				<SignInLink>
 					Não possui conta?{" "}
 					{/* biome-ignore lint/a11y/useValidAnchor: <explanation> */}
-					<a>Criar conta</a>
+					<Link style={{ color: "white" }} to="/cadastro">
+						Criar conta
+					</Link>
 				</SignInLink>
 			</ContainerItens>
 		</Container>

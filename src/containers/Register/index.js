@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
 import * as Yup from "yup";
 
+import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import Logo from "../../assets/logo.svg";
 import RegisterImg from "../../assets/register-image.svg";
 import Button from "../../components/Button";
@@ -112,7 +113,9 @@ function Register() {
 				<SignInLink>
 					Já possui conta?{" "}
 					{/* biome-ignore lint/a11y/useValidAnchor: <explanation> */}
-					<a>Entrar</a>
+					<Link style={{ color: "white" }} to="/login">
+						Acessar Conta
+					</Link>
 				</SignInLink>
 			</ContainerItens>
 		</Container>
