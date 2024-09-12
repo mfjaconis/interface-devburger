@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
 import * as Yup from "yup";
 
-import { Link } from "react-router-dom/cjs/react-router-dom.min";
+import { Link, useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import LoginImg from "../../assets/login-image.svg";
 import Logo from "../../assets/logo.svg";
 import Button from "../../components/Button";
@@ -21,6 +21,8 @@ import {
 } from "./styles";
 
 function Login() {
+	const history = useHistory();
+
 	const { putUserData } = useUser();
 
 	const schema = Yup.object({
@@ -58,6 +60,10 @@ function Login() {
 		);
 
 		putUserData(data);
+
+		setTimeout(() => {
+			history.push("/");
+		}, 1000);
 	};
 
 	return (
