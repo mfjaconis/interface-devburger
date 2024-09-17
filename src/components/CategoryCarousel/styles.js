@@ -1,4 +1,5 @@
 import Carousel from "react-elastic-carousel";
+import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import styled from "styled-components";
 
 export const StyledCarousel = styled(Carousel)`
@@ -48,7 +49,8 @@ export const Image = styled.img`
     height: 200px;
     border-radius: 10px;
 `;
-export const Button = styled.button`
+
+export const Button = styled(Link)`
     height: 50px;
     margin-top: 16px;
     border: none;
@@ -69,4 +71,9 @@ export const Button = styled.button`
     &:active {
         opacity: 0.6;
     }
+
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 `;

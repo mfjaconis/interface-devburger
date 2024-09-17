@@ -14,7 +14,7 @@ import {
 } from "./styles";
 
 export function Header() {
-	const { logout } = useUser();
+	const { logout, userData } = useUser();
 	const {
 		push,
 		location: { pathname },
@@ -48,7 +48,7 @@ export function Header() {
 					<img src={Person} alt="Logo-pessoa" />
 				</PageLink>
 				<ContainerText>
-					<p>Olá, Matheus</p>
+					<p>Olá, {userData.name}</p>
 					<a href="/login" onClick={logoutUser}>
 						Sair
 					</a>
