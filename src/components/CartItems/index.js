@@ -6,7 +6,6 @@ import { Body, Container, EmptyCart, Header } from "./styles";
 
 export function CartItems() {
 	const { cartProducts, increaseProducts, decreaseProducts } = useCart();
-	console.log(cartProducts);
 	return (
 		<Container>
 			<Header>
@@ -25,9 +24,19 @@ export function CartItems() {
 						<p>{formatCurrency(product.price)}</p>
 
 						<div>
-							<button type="button" onClick={() => decreaseProducts(product.id)}>-</button>
+							<button
+								type="button"
+								onClick={() => decreaseProducts(product.id)}
+							>
+								-
+							</button>
 							<p>{product.quantity}</p>
-							<button type="button" onClick={() => increaseProducts(product.id)}>+</button>
+							<button
+								type="button"
+								onClick={() => increaseProducts(product.id)}
+							>
+								+
+							</button>
 						</div>
 
 						<p>{formatCurrency(product.quantity * product.price)}</p>
