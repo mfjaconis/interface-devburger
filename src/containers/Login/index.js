@@ -7,13 +7,12 @@ import * as Yup from "yup";
 import { Link, useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import LoginImg from "../../assets/login-image.svg";
 import Logo from "../../assets/logo.svg";
-import { Button } from "../../components";
+import { Button, ErrorMessage } from "../../components";
 import { useUser } from "../../hooks/UserContext";
 import api from "../../services/api";
 import {
 	Container,
 	ContainerItens,
-	ErrorMessage,
 	Input,
 	Label,
 	LoginImage,

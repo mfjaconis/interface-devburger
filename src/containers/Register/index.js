@@ -7,12 +7,11 @@ import * as Yup from "yup";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import Logo from "../../assets/logo.svg";
 import RegisterImg from "../../assets/register-image.svg";
-import { Button } from "../../components";
+import { Button, ErrorMessage } from "../../components";
 import api from "../../services/api";
 import {
 	Container,
 	ContainerItens,
-	ErrorMessage,
 	Input,
 	Label,
 	RegisterImage,

@@ -9,5 +9,7 @@ export const Container = styled.div`
 `;
 
 export const ContainerItems = styled.div`
-    margin: 20px auto;
+    margin: 0 auto;
+    padding: 20px;
+    width: 100%;
 `;
