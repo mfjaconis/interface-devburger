@@ -18,6 +18,7 @@ function Routes() {
 				<PrivateRoute path={paths.Order} component={Admin} isAdmin />
 				<PrivateRoute path={paths.Products} component={Admin} isAdmin />
 				<PrivateRoute path={paths.NewProduct} component={Admin} isAdmin />
+				<PrivateRoute path={paths.EditProduct} component={Admin} isAdmin />
 			</Switch>
 		</Router>
 	);

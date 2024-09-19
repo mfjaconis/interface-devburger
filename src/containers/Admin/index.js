@@ -3,6 +3,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { SideMenuAdmin } from "../../components/SideMenuAdmin";
 import paths from "../../constantes/paths";
+import EditProduct from "./EditProduct";
 import ListProducts from "./ListProducts";
 import NewProduct from "./NewProduct";
 import Orders from "./Orders";
@@ -16,6 +17,7 @@ export function Admin({ match: { path } }) {
 				{path === paths.Order && <Orders />}
 				{path === paths.Products && <ListProducts />}
 				{path === paths.NewProduct && <NewProduct />}
+				{path === paths.EditProduct && <EditProduct />}
 			</ContainerItems>
 		</Container>
 	);
